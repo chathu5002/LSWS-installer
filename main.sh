@@ -8,6 +8,10 @@ read -p 'Enter choise: ' varoption
 
 echo
 
-if [ "$varoption" = "a" ]; then
-    echo "equal"
+if [ "$varoption" = "1" ]; then
+    echo "Installing PHP"
+elif [ "$varoption" = "2" ]; then
+    echo "Installing LSWS"
+elif [ "$varoption" = "3" ]; then
+    echo "Configuring LSWS"
 fi
