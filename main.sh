@@ -4,12 +4,14 @@ echo Press [1] to install PHP
 echo Press [2] to install LSWS
 echo Press [3] to configure LSWS
 echo
-read -p 'Enter choise: ' varoption
+read -p 'Enter choice: ' varoption
 
 echo
 
 if [ "$varoption" = "1" ]; then
     echo "Installing PHP"
+    date
+    whoami
 elif [ "$varoption" = "2" ]; then
     echo "Installing LSWS"
 elif [ "$varoption" = "3" ]; then
