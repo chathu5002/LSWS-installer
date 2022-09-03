@@ -9,10 +9,10 @@ read -p 'Enter choice: ' varoption
 echo
 
 if [ "$varoption" = "1" ]; then
-    echo ">>>>>>> Installing PHP <<<<<<<"
+    echo ">>>>>>> Installing Litespeed Webserver <<<<<<<"
     wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh | sudo bash
-    sudo apt update
-    sudo apt install openlitespeed
+    sudo apt update &> apt-update.log
+    sudo apt install openlitespeed &> lsws-install.log
 elif [ "$varoption" = "2" ]; then
     echo "Installing LSWS"
 elif [ "$varoption" = "3" ]; then
