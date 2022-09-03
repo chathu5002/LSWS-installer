@@ -12,8 +12,8 @@ if [ "$varoption" = "1" ]; then
     echo ">>>>>>> Installing Litespeed Webserver <<<<<<<"
     wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh | sudo bash
     # 2>&1 file.txt would read as stderr goes to stdout (terminal), stdout goes to file, so you will see error output but normal output would go to the file.
-    sudo apt update > apt-update.log 2>&1
-    sudo apt install openlitespeed > lsws-install.log 2>&1
+    sudo apt update 1> apt-update.log
+    sudo apt install openlitespeed 1> lsws-install.log
 elif [ "$varoption" = "2" ]; then
     echo "Installing LSWS"
 elif [ "$varoption" = "3" ]; then
