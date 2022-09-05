@@ -19,7 +19,7 @@ if [ "$varoption" = "1" ]; then
     read -p 'Enter choice: ' varserver
     echo
     if [ "$varserver" = "1" ]; then
-        echo -e "\e[1;31m >>>>>>> Installing Litespeed Webserver <<<<<<< \e[0m"
+        echo -e "\e[1;31m Installing Litespeed Webserver... \e[0m"
         echo
         wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh | sudo bash
         # 2>&1 file.txt would read as stderr goes to stdout (terminal), stdout goes to file, so you will see error output but normal output would go to the file.
