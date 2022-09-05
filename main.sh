@@ -2,9 +2,10 @@
 echo
 echo Initializing server configuration utility as user $(whoami) on $(uname)-$(uname -r)
 echo
-echo Press [1] to install server
-echo Press [2] to install LSWS
-echo Press [3] to configure LSWS
+echo Press [1] to install webserver
+echo Press [2] to install PHP
+echo Press [3] to install DBMS
+echo Press [4] to install WordPress
 echo
 read -p 'Enter choice: ' varoption
 echo
