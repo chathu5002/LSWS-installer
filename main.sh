@@ -20,6 +20,7 @@ if [ "$varoption" = "1" ]; then
     echo
     if [ "$varserver" = "1" ]; then
         echo ">>>>>>> Installing Litespeed Webserver <<<<<<<"
+        echo
         wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh | sudo bash
         # 2>&1 file.txt would read as stderr goes to stdout (terminal), stdout goes to file, so you will see error output but normal output would go to the file.
         sudo apt update 2>&1 | tee apt-update.log
