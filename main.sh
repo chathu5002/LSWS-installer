@@ -26,6 +26,7 @@ if [ "$varoption" = "1" ]; then
         echo ">>>>>>> Installing Nginx Webserver <<<<<<<"
     else
         echo "Invalid input"
+    fi
 
 
 
@@ -36,7 +37,11 @@ if [ "$varoption" = "1" ]; then
     # sudo apt install openlitespeed 2>&1 | tee lsws-install.log
 
 elif [ "$varoption" = "2" ]; then
-    echo "Installing LSWS"
+    echo "Installing PHP"
 elif [ "$varoption" = "3" ]; then
-    echo "Configuring LSWS"
+    echo "Installing DBMS"
+elif [ "$varoption" = "4" ]; then
+    echo "Installing WordPress"
+else
+    echo "Invalid input"
 fi
