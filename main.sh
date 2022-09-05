@@ -17,7 +17,7 @@ if [ "$varoption" = "1" ]; then
     echo Press [3] to install Nginx
     echo
     read -p 'Enter choice: ' varserver
-    echo
+    # echo
     if [ "$varoption" = "1" ]; then
         echo ">>>>>>> Installing Litespeed Webserver <<<<<<<"
     elif [ "$varoption" = "2" ]; then
