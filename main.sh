@@ -8,7 +8,7 @@ echo Press [3] to install DBMS
 echo Press [4] to install WordPress
 echo
 read -p 'Enter choice: ' varoption
-# echo
+
 
 if [ "$varoption" = "1" ]; then
     echo
@@ -20,6 +20,10 @@ if [ "$varoption" = "1" ]; then
     echo
     if [ "$varoption" = "1" ]; then
         echo ">>>>>>> Installing Litespeed Webserver <<<<<<<"
+        wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh | sudo bash
+        # 2>&1 file.txt would read as stderr goes to stdout (terminal), stdout goes to file, so you will see error output but normal output would go to the file.
+        sudo apt update 2>&1 | tee apt-update.log
+        sudo apt install openlitespeed 2>&1 | tee lsws-install.log
     elif [ "$varoption" = "2" ]; then
         echo ">>>>>>> Installing Apache Webserver <<<<<<<"
     elif [ "$varoption" = "3" ]; then
