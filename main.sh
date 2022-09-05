@@ -1,11 +1,12 @@
 #!/bin/bash
-# Ask the user for login details
-echo Press [1] to install PHP
-echo Press [2] to install LSWS
-echo Press [3] to configure LSWS
+
+printf Initializing server configuration utility as user $(whoami) on $(uname)-$(uname -r)
+
+printf Press [1] to install PHP
+printf Press [2] to install LSWS
+printf Press [3] to configure LSWS
 echo
 read -p 'Enter choice: ' varoption
-
 echo
 
 if [ "$varoption" = "1" ]; then
