@@ -29,6 +29,18 @@ if [ "$varoption" = "1" ]; then
         # sudo apt install openlitespeed 2>&1 | tee lsws-install.log
         sudo apt update
         sudo apt install openlitespeed
+
+
+        ADMIN_USER=admin
+        PASS_ONE=$(curl -s https://www.passwordrandom.com/query?command=password) > password.txt
+
+        ENCRYPT_PASS=`/usr/local/lsws/admin/fcgi-bin/admin_php -q /usr/local/lsws/admin/misc/htpasswd.php $PASS_ONE`
+        echo "$ADMIN_USER:$ENCRYPT_PASS" > /usr/local/lsws/admin/conf/htpasswd 
+        if [ $? -eq 0 ]; then
+            echo "Administrator's username/password is updated successfully!"
+        fi
+
+
     elif [ "$varserver" = "2" ]; then
         echo -e "\e[1;31mInstalling Apache Webserver...\e[0m"
     elif [ "$varserver" = "3" ]; then
