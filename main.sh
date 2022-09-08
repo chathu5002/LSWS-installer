@@ -27,8 +27,8 @@ if [ "$varoption" = "1" ]; then
         # 2>&1 file.txt would read as stderr goes to stdout (terminal), stdout goes to file, so you will see error output but normal output would go to the file.
         # sudo apt update 2>&1 | tee apt-update.log
         # sudo apt install openlitespeed 2>&1 | tee lsws-install.log
-        sudo apt update > apt-update.log
-        sudo apt install openlitespeed > lsws-install.log
+        sudo apt update
+        sudo apt install openlitespeed
     elif [ "$varserver" = "2" ]; then
         echo -e "\e[1;31mInstalling Apache Webserver...\e[0m"
     elif [ "$varserver" = "3" ]; then
