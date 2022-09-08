@@ -32,6 +32,7 @@ if [ "$varoption" = "1" ]; then
 
 
         ADMIN_USER=admin
+        echo "$ADMIN_USER" > username.txt
         PASS_ONE=$(curl -s https://www.passwordrandom.com/query?command=password)
         echo "$PASS_ONE" | cut -c 1-6 > password.txt
 
