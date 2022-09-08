@@ -1,5 +1,5 @@
 #!/bin/bash
-# www.passwordrandom.com/query?command=password
+
 echo
 echo Initializing server configuration utility as user $(whoami) on $(uname)-$(uname -r)
 echo
