@@ -34,7 +34,7 @@ if [ "$varoption" = "1" ]; then
         ADMIN_USER="admin"
         echo "$ADMIN_USER" > username.txt
         PASS_ONE=$(curl -s https://www.passwordrandom.com/query?command=password)
-        PASS_TWO = PASS_ONE | cut -c 1-6
+        PASS_ONE | cut -c 1-6 > PASS_TWO
         echo "$PASS_TWO" > password.txt
 
         ENCRYPT_PASS=`/usr/local/lsws/admin/fcgi-bin/admin_php -q /usr/local/lsws/admin/misc/htpasswd.php $PASS_TWO`
