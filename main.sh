@@ -31,7 +31,7 @@ if [ "$varoption" = "1" ]; then
         sudo apt install openlitespeed
 
 
-        ADMIN_USER=admin
+        ADMIN_USER="admin"
         echo "$ADMIN_USER" > username.txt
         PASS_ONE=$(curl -s https://www.passwordrandom.com/query?command=password)
         PASS_ONE = PASS_ONE | cut -c 1-6
