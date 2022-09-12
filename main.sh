@@ -7,7 +7,7 @@ echo Press [1] to install webserver
 echo Press [2] to install PHP
 echo Press [3] to install DBMS
 echo Press [4] to install WordPress
-echo Press [5] to install webserver
+echo Press [5] to change LSWS password
 echo
 read -p 'Enter choice: ' varoption
 
