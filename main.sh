@@ -31,21 +31,27 @@ if [ "$varoption" = "1" ]; then
         sudo apt install openlitespeed
 
 
+       
+
+
+
+
+
+    elif [ "$varserver" = "2" ]; then
+        echo -e "\e[1;31mInstalling Apache Webserver...\e[0m"
+
         ADMIN_USER=admin
-        echo "$ADMIN_USER" > username.txt
         PASS_ONE=$(curl -s https://www.passwordrandom.com/query?command=password | cut -c 1-6)
     
         echo $PASS_ONE > password.txt
 
         ENCRYPT_PASS=`/usr/local/lsws/admin/fcgi-bin/admin_php -q /usr/local/lsws/admin/misc/htpasswd.php $PASS_ONE`
-        echo "$ADMIN_USER:$ENCRYPT_PASS" > sudo /usr/local/lsws/admin/conf/htpasswd
+        echo "$ADMIN_USER:$ENCRYPT_PASS" > /usr/local/lsws/admin/conf/htpasswd 
         if [ $? -eq 0 ]; then
-            echo "Administrator's username/password is updated successfully!"
+	        echo "Administrator's username/password is updated successfully!"
         fi
 
 
-    elif [ "$varserver" = "2" ]; then
-        echo -e "\e[1;31mInstalling Apache Webserver...\e[0m"
     elif [ "$varserver" = "3" ]; then
         echo -e "\e[1;31mInstalling Nginx Webserver...\e[0m"
     else
