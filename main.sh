@@ -33,10 +33,6 @@ if [ "$varoption" = "1" ]; then
 
        
 
-
-
-
-
     elif [ "$varserver" = "2" ]; then
         echo -e "\e[1;31mInstalling Apache Webserver...\e[0m"
 
