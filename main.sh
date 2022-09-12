@@ -48,7 +48,7 @@ elif [ "$varoption" = "3" ]; then
 elif [ "$varoption" = "4" ]; then
     echo "Installing WordPress"
 elif [ "$varoption" = "5" ]; then
-    echo "Change LSWS password"
+    sudo sh main.sh
 else
     echo "Invalid input"
 fi
