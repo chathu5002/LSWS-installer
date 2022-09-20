@@ -20,7 +20,6 @@ if [ "$varoption" = "1" ]; then
     read -p 'Enter choice: ' varDBMS
     echo
     echo Press [1] to install LSWS
-    echo Press [1] to install LSWS
     echo Press [2] to install Apache
     echo Press [3] to install Nginx
     echo
@@ -30,6 +29,7 @@ if [ "$varoption" = "1" ]; then
     if [ "$varserver" = "1" ]; then
         echo "\e[1;31mInstalling Litespeed Webserver...\e[0m"
         echo
+        install_LSWS
         change_LSWS_password
         install_DBMS
 
