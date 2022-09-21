@@ -3,12 +3,12 @@
 install_LSWS () {
     wget -O - http://rpms.litespeedtech.com/debian/enable_lst_debian_repo.sh | sudo bash
     sudo apt update
-    sudo apt install openlitespeed
+    sudo apt install openlitespeed -y
 }
 
 install_Apache () {
     sudo apt-get update
-    sudo apt-get install apache2 apache2-utils
+    sudo apt-get install apache2 apache2-utils -y
 
     # Enable Apache to start at system boot time
     sudo systemctl enable apache2
@@ -25,11 +25,11 @@ install_DBMS () {
 }
 
 install_MySQL () {
-    sudo apt-get install mysql-client mysql-server
+    sudo apt-get install mysql-client mysql-server -y
 }
 
 install_MariaDB () {
-    sudo apt-get install mariadb-server mariadb-client
+    sudo apt-get install mariadb-server mariadb-client -y
 }
 
 createDatabase () {
