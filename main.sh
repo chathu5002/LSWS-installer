@@ -49,11 +49,11 @@ createDatabase () {
     db_password=$(curl -s https://www.passwordrandom.com/query?command=password | cut -c 1-6)
     echo $db_password > dbpassword.txt
 
-    CREATE DATABASE db_name;
-    CREATE USER '$user_name'@'%' IDENTIFIED WITH mysql_native_password BY 'db_password';
-    GRANT ALL ON $db_name.* TO '$user_name'@'%';
-    FLUSH PRIVILEGES;
-    EXIT;
+    sudo mysql -e "CREATE DATABASE $db_name";
+    sudo mysql -e "CREATE USER '$user_name'@'%' IDENTIFIED WITH mysql_native_password BY 'db_password'";
+    sudo mysql -e "GRANT ALL ON $db_name.* TO '$user_name'@'%'";
+    sudo mysql -e "FLUSH PRIVILEGES";
+    # sudo mysql -e "EXIT";
 }
 
 change_LSWS_password () {
