@@ -83,6 +83,7 @@ install_DBMS () {
         install_MySQL
     elif [ "$varserver" = "2" ]; then
         install_MariaDB
+    fi
 }
 
 install_MySQL () {
