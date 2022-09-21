@@ -33,7 +33,6 @@ install_MariaDB () {
 }
 
 createDatabase () {
-    #!/bin/bash
     db_date=`date +%s%N`;
     # db_suffix=${db_date:13:6};
     db_suffix=$(echo $db_date | cut -c13-18)
@@ -53,7 +52,6 @@ createDatabase () {
     sudo mysql -e "CREATE USER '$user_name'@'%' IDENTIFIED WITH mysql_native_password BY 'db_password'";
     sudo mysql -e "GRANT ALL ON $db_name.* TO '$user_name'@'%'";
     sudo mysql -e "FLUSH PRIVILEGES";
-    # sudo mysql -e "EXIT";
 }
 
 change_LSWS_password () {
@@ -91,7 +89,11 @@ if [ "$varoption" = "1" ]; then
         echo
         install_LSWS
         change_LSWS_password
+        echo "\e[1;31mInstalling DBMS...\e[0m"
+        echo
         install_DBMS
+        echo "\e[1;31mCreating Database...\e[0m"
+        echo
         createDatabase
 
     # Install Apache
@@ -113,7 +115,8 @@ if [ "$varoption" = "1" ]; then
 elif [ "$varoption" = "2" ]; then
     echo "Installing PHP"
 elif [ "$varoption" = "3" ]; then
-    echo "Installing DBMS"
+    echo "\e[1;31mInstalling DBMS...\e[0m"
+    echo
     createDatabase
 elif [ "$varoption" = "4" ]; then
     echo "Installing WordPress"
