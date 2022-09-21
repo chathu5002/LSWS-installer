@@ -104,6 +104,7 @@ if [ "$varoption" = "1" ]; then
         echo "\e[1;31mInstalling WordPress...\e[0m"
         echo
         install_WordPress
+        sudo rm latest.tar.gz
         echo "\e[1;31mServer configuration wizard finish.\e[0m"
 
     # Install Apache
