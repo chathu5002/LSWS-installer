@@ -58,6 +58,12 @@ change_LSWS_password () {
     sudo sh admpass.sh
 }
 
+install_WordPress () {
+    wget -c http://wordpress.org/latest.tar.gz
+    tar -xzvf latest.tar.gz
+    sudo mv wordpress/ /usr/local/lsws/Example/
+}
+
 echo
 echo Initializing server configuration utility as user $(whoami) on $(uname)-$(uname -r)
 echo
@@ -95,6 +101,9 @@ if [ "$varoption" = "1" ]; then
         echo "\e[1;31mCreating Database...\e[0m"
         echo
         createDatabase
+        echo "\e[1;31mInstalling WordPress...\e[0m"
+        echo
+        install_WordPress
 
     # Install Apache
     elif [ "$varserver" = "2" ]; then
@@ -119,8 +128,11 @@ elif [ "$varoption" = "3" ]; then
     echo
     createDatabase
 elif [ "$varoption" = "4" ]; then
-    echo "Installing WordPress"
+    echo "\e[1;31mInstalling WordPress...\e[0m"
+    echo
+    install_WordPress
 elif [ "$varoption" = "5" ]; then
+    echo "\e[1;31mChanging LSWS password...\e[0m"
     sudo sh admpass.sh
 else
     echo "Invalid input"
