@@ -114,6 +114,7 @@ elif [ "$varoption" = "2" ]; then
     echo "Installing PHP"
 elif [ "$varoption" = "3" ]; then
     echo "Installing DBMS"
+    createDatabase
 elif [ "$varoption" = "4" ]; then
     echo "Installing WordPress"
 elif [ "$varoption" = "5" ]; then
