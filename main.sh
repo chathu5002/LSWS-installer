@@ -33,6 +33,7 @@ install_MariaDB () {
 }
 
 createDatabase () {
+    #!/bin/bash
     db_date=`date +%s%N`
     db_suffix=${db_date:13:6};
     db_name="wp_$db_suffix"
