@@ -54,6 +54,10 @@ createDatabase () {
     sudo mysql -e "FLUSH PRIVILEGES";
 }
 
+install_PHP_modules (){
+    sudo apt-get install php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip
+}
+
 change_LSWS_password () {
     sudo sh admpass.sh
 }
@@ -110,8 +114,23 @@ if [ "$varoption" = "1" ]; then
     # Install Apache
     elif [ "$varserver" = "2" ]; then
         echo "\e[1;31mInstalling Apache Webserver...\e[0m"
+        echo
         install_Apache
+        echo "\e[1;31mInstalling PHP modules...\e[0m"
+        echo
+        install_PHP_modules
+        echo "\e[1;31mInstalling DBMS...\e[0m"
+        echo
         install_DBMS
+        echo "\e[1;31mCreating Database...\e[0m"
+        echo
+        createDatabase
+        echo "\e[1;31mInstalling WordPress...\e[0m"
+        echo
+        install_WordPress
+        sudo rm latest.tar.gz
+        echo "\e[1;31mServer configuration wizard finish.\e[0m"
+
 
     # Install Nginx
     elif [ "$varserver" = "3" ]; then
@@ -124,7 +143,9 @@ if [ "$varoption" = "1" ]; then
 
 
 elif [ "$varoption" = "2" ]; then
-    echo "Installing PHP"
+    install_PHP_modules
+    echo "\e[1;31mInstalling DBMS...\e[0m"
+    echo
 elif [ "$varoption" = "3" ]; then
     echo "\e[1;31mInstalling DBMS...\e[0m"
     echo
