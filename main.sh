@@ -34,15 +34,15 @@ install_MariaDB () {
 
 createDatabase () {
     #!/bin/bash
-    db_date=`date +%s%N`
+    db_date=`date +%s%N`;
     db_suffix=${db_date:13:6};
-    db_name="wp_$db_suffix"
-    echo $db_name > dbname.txt
+    db_name="wp_$db_suffix";
+    echo $db_name > dbname.txt;
 
-    user_date=`date +%s%N`
+    user_date=`date +%s%N`;
     user_suffix=${user_date:13:6};
-    user_name="user_$user_suffix"
-    echo $user_name > dbusername.txt
+    user_name="user_$user_suffix";
+    echo $user_name > dbusername.txt;
 
     db_password=$(curl -s https://www.passwordrandom.com/query?command=password | cut -c 1-6)
     echo $db_password > dbpassword.txt
